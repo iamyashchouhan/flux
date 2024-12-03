@@ -39,9 +39,9 @@ def process_txt2img_data():
 
     # Call Gradio client for txt2img
     result = txt2img_client.predict(
+        style_id=style_id,
         prompt=prompt,
         ratio=ratio,
-        style_id=style_id,  # Use style_id from the form data
         uuid_value=uuid_value,
         token=token,
         api_name="/process_txt2img"
@@ -87,11 +87,11 @@ def process_img2img_data():
 
     # Call Gradio client for img2img
     result = img2img_client.predict(
-        image=image,  # Path to the uploaded image
+        style_id=style_id,
         ratio=ratio,
-        style_id=style_id,  # Use style_id from the form data
         uuid_value=uuid_value,
         token=token,
+        image=image,
         api_name="/process_img2img"
     )
 
@@ -136,9 +136,9 @@ def process_doodle_data():
 
     # Call Gradio client for img2img
     result = img2img_client.predict(
-        image=image,  # Path to the uploaded image
         ratio=ratio,
-        style_id=style_id,  # Use style_id from the form data
+        image=image,
+        style_id=style_id,
         uuid_value=uuid_value,
         token=token,
         prompt=prompt,
@@ -181,9 +181,9 @@ def process_enhace_data():
 
     # Call Gradio client for img2img
     result = img2img_client.predict(
-        image=image,  # Path to the uploaded image
         uuid_value=uuid_value,
         token=token,
+        image=image,
         api_name="/process_enhance"
     )
 
@@ -223,9 +223,9 @@ def process_prompt_data():
 
     # Call Gradio client for img2img
     result = img2img_client.predict(
-        image=image,  # Path to the uploaded image
         uuid_value=uuid_value,
         token=token,
+        image=image,
         api_name="/process_prompt"
     )
 
@@ -267,10 +267,10 @@ def process_outpaint_data():
 
     # Call Gradio client for img2img
     result = img2img_client.predict(
-        image=image,
-        canvas=canvas,
         uuid_value=uuid_value,
         token=token,
+        image=image,
+        canvas=canvas,
         api_name="/process_outpaint"
     )
 
@@ -311,10 +311,10 @@ def process_faceswap_data():
 
     # Call Gradio client for img2img
     result = img2img_client.predict(
-        image=image,
-        target=style,
         uuid_value=uuid_value,
         token=token,
+        image=image,
+        target=style,
         api_name="/process_faceswap"
     )
 
@@ -360,13 +360,13 @@ def process_inpaint_data():
 
     # Call Gradio client for img2img
     result = inpaint_client.predict(
-        image=image, 
-        mask=mask,
+        style_id="0",
         ratio=ratio,
         uuid_value=uuid_value,
         token=token,
         prompt=prompt,
-        style_id="0",
+        mask=mask,
+        image=image, 
         api_name="/process_inpaint"
     )
 
