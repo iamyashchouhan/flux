@@ -258,7 +258,7 @@ def process_faceswap_data():
 
     # You can print the received form data
     print("Received form data for img2img:")
-    print(f"uuid_value: {uuid_value}, token: {token}, style: {style}, image: {image}")
+    
 
     # Check for required parameters
     if not uuid_value or not image:
