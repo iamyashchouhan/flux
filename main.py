@@ -41,7 +41,7 @@ def process_txt2img_data():
     result = txt2img_client.predict(
         prompt=prompt,
         ratio=ratio,
-        style=style_id,  # Use style_id from the form data
+        style_id=style_id,  # Use style_id from the form data
         uuid_value=uuid_value,
         token=token,
         api_name="/process_txt2img"
@@ -89,7 +89,7 @@ def process_img2img_data():
     result = img2img_client.predict(
         image=image,  # Path to the uploaded image
         ratio=ratio,
-        style=style_id,  # Use style_id from the form data
+        style_id=style_id,  # Use style_id from the form data
         uuid_value=uuid_value,
         token=token,
         api_name="/process_img2img"
@@ -138,7 +138,7 @@ def process_doodle_data():
     result = img2img_client.predict(
         image=image,  # Path to the uploaded image
         ratio=ratio,
-        style=style_id,  # Use style_id from the form data
+        style_id=style_id,  # Use style_id from the form data
         uuid_value=uuid_value,
         token=token,
         prompt=prompt,
@@ -296,7 +296,7 @@ def process_faceswap_data():
     uuid_value = request.form.get('Uid', '')
     token = request.form.get('Token', '')
     image = request.form.get('image_name') 
-    style = request.form.get('style')# Get the image file sent in the request
+    style_id = request.form.get('style')# Get the image file sent in the request
 
     # You can print the received form data
     print("Received form data for img2img:")
@@ -366,7 +366,7 @@ def process_inpaint_data():
         uuid_value=uuid_value,
         token=token,
         prompt=prompt,
-        style="0",
+        style_id="0",
         api_name="/process_inpaint"
     )
 
