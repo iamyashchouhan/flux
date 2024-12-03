@@ -11,9 +11,9 @@ from gradio_client import Client
 sys.stdout = open(os.devnull, 'w')
 sys.stderr = open(os.devnull, 'w')
 app = Flask(__name__)
-txt2img_client = Client("216.48.185.71")
-img2img_client = Client("216.48.185.71") 
-inpaint_client = Client("216.48.185.71") 
+txt2img_client = Client("http://216.48.185.164:7860/")
+img2img_client = Client("http://216.48.185.164:7860/") 
+inpaint_client = Client("http://216.48.185.164:7860/") 
 sys.stdout = sys.__stdout__
 sys.stderr = sys.__stderr__
 
