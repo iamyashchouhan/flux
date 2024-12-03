@@ -268,7 +268,7 @@ def process_outpaint_data():
     # Call Gradio client for img2img
     result = img2img_client.predict(
         image=image,
-        canvas_info=canvas,
+        canvas=canvas,
         uuid_value=uuid_value,
         token=token,
         api_name="/process_outpaint"
