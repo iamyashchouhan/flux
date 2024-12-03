@@ -272,7 +272,7 @@ def process_faceswap_data():
         uuid_value=uuid_value,
         token=token,
         image=image,
-        target=style,
+        style=style_id,
         api_name="/process_faceswap"
     )
 
