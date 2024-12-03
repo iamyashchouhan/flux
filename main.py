@@ -50,18 +50,11 @@ def process_txt2img_data():
     # Print the result from the Gradio client
     print("Gradio client result:", result)
 
-    if isinstance(result, str):
-        try:
-            # Attempt to parse the result if it's a string
-            result = json.loads(result)
-        except json.JSONDecodeError:
-            return jsonify({"error": "Invalid JSON returned from the Gradio client."}), 500
-
     # Log the parsed result for debugging purposes
     print("Parsed result from Gradio:", result)
 
     # Return the parsed result as JSON
-    return jsonify(result)
+    return result
 
 @app.route('/ai/art/img2img/', methods=['POST'])
 def process_img2img_data():
@@ -98,18 +91,11 @@ def process_img2img_data():
     # Print the result from the Gradio client
     print(result)
 
-    if isinstance(result, str):
-        try:
-            # Attempt to parse the result if it's a string
-            result = json.loads(result)
-        except json.JSONDecodeError:
-            return jsonify({"error": "Invalid JSON returned from the Gradio client."}), 500
-
     # Log the parsed result for debugging purposes
     print(result)
 
     # Return the parsed result as JSON
-    return jsonify(result)
+    return result
 
 @app.route('/ai/art/lineart/', methods=['POST'])
 def process_doodle_data():
@@ -148,18 +134,11 @@ def process_doodle_data():
     # Print the result from the Gradio client
     print(result)
 
-    if isinstance(result, str):
-        try:
-            # Attempt to parse the result if it's a string
-            result = json.loads(result)
-        except json.JSONDecodeError:
-            return jsonify({"error": "Invalid JSON returned from the Gradio client."}), 500
-
     # Log the parsed result for debugging purposes
     print(result)
 
     # Return the parsed result as JSON
-    return jsonify(result)
+    return result
 
 @app.route('/ai/art/enhance/', methods=['POST'])
 def process_enhace_data():
@@ -190,18 +169,11 @@ def process_enhace_data():
     # Print the result from the Gradio client
     print(result)
 
-    if isinstance(result, str):
-        try:
-            # Attempt to parse the result if it's a string
-            result = json.loads(result)
-        except json.JSONDecodeError:
-            return jsonify({"error": "Invalid JSON returned from the Gradio client."}), 500
-
     # Log the parsed result for debugging purposes
     print(result)
 
     # Return the parsed result as JSON
-    return jsonify(result)
+    return result
 
 @app.route('/ai/art/prompt/', methods=['POST'])
 def process_prompt_data():
@@ -232,18 +204,11 @@ def process_prompt_data():
     # Print the result from the Gradio client
     print(result)
 
-    if isinstance(result, str):
-        try:
-            # Attempt to parse the result if it's a string
-            result = json.loads(result)
-        except json.JSONDecodeError:
-            return jsonify({"error": "Invalid JSON returned from the Gradio client."}), 500
-
     # Log the parsed result for debugging purposes
     print(result)
 
     # Return the parsed result as JSON
-    return jsonify(result)
+    return result
 
 @app.route('/ai/art/expand/', methods=['POST'])
 def process_outpaint_data():
@@ -277,18 +242,11 @@ def process_outpaint_data():
     # Print the result from the Gradio client
     print(result)
 
-    if isinstance(result, str):
-        try:
-            # Attempt to parse the result if it's a string
-            result = json.loads(result)
-        except json.JSONDecodeError:
-            return jsonify({"error": "Invalid JSON returned from the Gradio client."}), 500
-
     # Log the parsed result for debugging purposes
     print(result)
 
     # Return the parsed result as JSON
-    return jsonify(result)
+    return result
 
 @app.route('/ai/art/faceswap/', methods=['POST'])
 def process_faceswap_data():
@@ -321,18 +279,8 @@ def process_faceswap_data():
     # Print the result from the Gradio client
     print(result)
 
-    if isinstance(result, str):
-        try:
-            # Attempt to parse the result if it's a string
-            result = json.loads(result)
-        except json.JSONDecodeError:
-            return jsonify({"error": "Invalid JSON returned from the Gradio client."}), 500
-
-    # Log the parsed result for debugging purposes
-    print(result)
-
     # Return the parsed result as JSON
-    return jsonify(result)
+    return result
 
 @app.route('/ai/art/inpaint/', methods=['POST'])
 def process_inpaint_data():
@@ -372,19 +320,10 @@ def process_inpaint_data():
 
     # Print the result from the Gradio client
     print(result)
-
-    if isinstance(result, str):
-        try:
-            # Attempt to parse the result if it's a string
-            result = json.loads(result)
-        except json.JSONDecodeError:
-            return jsonify({"error": "Invalid JSON returned from the Gradio client."}), 500
-
     # Log the parsed result for debugging purposes
-    print(result)
 
     # Return the parsed result as JSON
-    return jsonify(result)
+    return result
 
 if __name__ == '__main__':
     # Bind the app to all network interfaces (0.0.0.0) and specify the port (e.g., 5000)
