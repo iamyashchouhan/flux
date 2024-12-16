@@ -2,7 +2,7 @@ from flask import Flask, request, jsonify
 import sys
 import flux
 import os
-sys.path.append('/content/flux')
+sys.path.append('/cudnn_samples_v8/flux')
 import flux
 import json
 import logging
