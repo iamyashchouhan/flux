@@ -2,7 +2,8 @@ from flask import Flask, request, jsonify
 import sys
 import flux
 import os
-
+sys.path.append('/content/flux')
+import flux
 import json
 import logging
 
@@ -52,7 +53,7 @@ def process_txt2img_data():
 
     # Log the parsed result for debugging purposes
     print("Parsed result from Gradio:", result)
-
+    flux.connects()
     # Return the parsed result as JSON
     return result
 
